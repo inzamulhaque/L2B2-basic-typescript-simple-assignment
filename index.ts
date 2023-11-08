@@ -117,8 +117,52 @@ const result1 = sumMixedData(mixedData);
 const result2 = sumMixedData(mixedData2);
 const result3 = sumMixedData(mixedData3);
 
-console.log({ result1, result2, result3 });
-
 // console.log({mixedData, mixedData2});
 
 // problem-4 end
+
+// problem-5 start
+
+interface Car {
+  make: string;
+  model: string;
+  year: number;
+}
+
+interface Driver {
+  name: string;
+  licenseNumber: number;
+}
+
+const margeCarAndDriver = (car: Car, driver: Driver): Car & Driver => {
+  return { ...car, ...driver };
+};
+
+const car1: Car = {
+  make: "japan",
+  model: "xzy",
+  year: 2002,
+};
+
+const driver1: Driver = {
+  name: "MD IH Alif",
+  licenseNumber: 2201020183,
+};
+
+const car2: Car = {
+  make: "india",
+  model: "y-0e",
+  year: 2001,
+};
+
+const driver2: Driver = {
+  name: "Alif",
+  licenseNumber: 2203020183,
+};
+
+const marge1 = margeCarAndDriver(car1, driver1);
+const marge2 = margeCarAndDriver(car2, driver2);
+
+// console.log({ marge1, marge2 });
+
+// problem-5 end
