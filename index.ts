@@ -212,9 +212,52 @@ const indexInStrings = findFirstOccurrence<string>(strings, targetString);
 
 const indexInNumbers2 = findFirstOccurrence<number>(numbers, 9);
 
-console.log(indexInNumbers);
+// console.log(indexInNumbers);
 
-console.log(indexInStrings);
-console.log(indexInNumbers2);
+// console.log(indexInStrings);
+// console.log(indexInNumbers2);
 
 // problem-7 end
+
+// problem-8 start
+
+interface Product {
+  name: string;
+  price: number;
+  quantity: number;
+}
+
+type Cart = Product[];
+
+const totalCost = (products: Cart): number => {
+  const subTotal = products.map((item) => item.price * item.quantity);
+  const total = subTotal.reduce(
+    (finalValue, currentValue) => finalValue + currentValue,
+    0
+  );
+
+  return total;
+};
+
+const product1: Product = {
+  name: "Asus Laptop",
+  price: 45000,
+  quantity: 1,
+};
+
+const product2: Product = {
+  name: "Oppo phone",
+  price: 13000,
+  quantity: 3,
+};
+
+const product3: Product = {
+  name: "iPhone 13",
+  price: 100000,
+  quantity: 1,
+};
+
+const cart: Cart = [product1, product2, product3];
+console.log(totalCost(cart));
+
+// problem-8 end
