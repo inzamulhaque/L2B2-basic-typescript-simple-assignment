@@ -191,3 +191,30 @@ const sumOfNumbers = (param: unknown): void => {
 // sumOfNumbers({ name: "Alif" });
 
 // problem-6 end
+
+// problem-7 start
+
+const numbers: number[] = [1, 2, 3, 4, 5, 2];
+
+const strings: string[] = ["apple", "banana", "cherry", "date", "apple"];
+
+const findFirstOccurrence = <T>(array: T[], target: T): number => {
+  return array.indexOf(target);
+};
+
+const targetNumber = 2;
+
+const targetString = "cherry";
+
+const indexInNumbers = findFirstOccurrence<number>(numbers, targetNumber);
+
+const indexInStrings = findFirstOccurrence<string>(strings, targetString);
+
+const indexInNumbers2 = findFirstOccurrence<number>(numbers, 9);
+
+console.log(indexInNumbers);
+
+console.log(indexInStrings);
+console.log(indexInNumbers2);
+
+// problem-7 end
