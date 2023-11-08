@@ -89,11 +89,36 @@ const isCat = (param: Cat) => {
 const cat1 = new Cat("Mr. Olos", "Cat", "Deshi");
 const cat2 = new Cat("Misty", "Cat", "Deshi");
 
-const result1 = isCat(cat1);
-const result2 = isCat({ name: "xyz", species: "xyz", breed: "xyz" });
-console.log({ cat1, cat2, result1, result2 });
+// const result1 = isCat(cat1);
+// const result2 = isCat({ name: "xyz", species: "xyz", breed: "xyz" });
+// console.log({ cat1, cat2, result1, result2 });
 
 // problem-3 end
 
-// const result = xyz("xzy")
-// console.log(result);
+// problem-4 start
+type MixedData = (number | string)[];
+
+const sumMixedData = (param: MixedData) => {
+  const number = param.filter((item) => typeof item === "number");
+
+  const sum = (number as number[]).reduce(
+    (accumulator, currentValue) => accumulator + currentValue,
+    0
+  );
+
+  return sum;
+};
+
+const mixedData: MixedData = [1, "two", 3, "four", 5];
+const mixedData2: MixedData = ["two", "four"];
+const mixedData3: MixedData = [1, 2, 3, 4, 5];
+
+const result1 = sumMixedData(mixedData);
+const result2 = sumMixedData(mixedData2);
+const result3 = sumMixedData(mixedData3);
+
+console.log({ result1, result2, result3 });
+
+// console.log({mixedData, mixedData2});
+
+// problem-4 end
