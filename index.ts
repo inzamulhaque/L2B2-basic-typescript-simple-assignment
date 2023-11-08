@@ -166,3 +166,28 @@ const marge2 = margeCarAndDriver(car2, driver2);
 // console.log({ marge1, marge2 });
 
 // problem-5 end
+
+// problem-6 start
+
+const sumOfNumbers = (param: unknown): void => {
+  if (param instanceof Array) {
+    if (param.every((item) => typeof item === "number")) {
+      const total = param.reduce(
+        (accumulator, currentValue) => accumulator + currentValue,
+        0
+      );
+
+      console.log(total);
+    } else {
+      console.log("please provide an array of numbers");
+    }
+  } else {
+    console.log("please provide an array");
+  }
+};
+
+// sumOfNumbers([1, 2, 3, 4, 5]);
+// sumOfNumbers([1, 2, 3, 4, "a", 5]);
+// sumOfNumbers({ name: "Alif" });
+
+// problem-6 end
