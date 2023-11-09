@@ -55,3 +55,61 @@ const user: User = {
 const age = user.age ?? 11;
 console.log(age); // 11
 ```
+
+## 3. How do you handle asynchronous operations in TypeScript, and what are the advantages of using async/await over callbacks or Promises?
+
+There are ways to handle asynchronous operations on Typescript: callback, promise, and async/await.
+
+callback: callback is a function that's passed another function as an argument and argument function finish the  executing. 
+
+promise: promise is an object and means a request completion or failure.
+
+async/await: async/await is a newer syntax that is built on top of promises and provides a more easy way to handle asynchronous operations.  
+
+
+Advantages of using async/await over callbacks or Promises:  
+async/await code is more easy to understand than callback or promise code. async/await code is more readable than callback or promise. async/await code like synchronous code and error handle is easier than callback or promise. In async/await code we are use try catch block for handling error.  
+
+
+## 4. How can you use TypeScript's enums, and what are their advantages?
+
+TypeScript enum are keyword that can be used to present same type variables.  
+use TypeScript's enums: To use TypeScript enum you need to define enum first. Like:  
+```
+enum Role {
+  ADMIN,
+  MANAGER,
+  USER,
+}
+```
+Then use TypeScript enum.
+```
+console.log(Role.ADMIN);
+```   
+
+Advantages of enum: enums make our code more readable, maintainable and safe also. It's made easier to understand code.
+
+
+## 5. Explain the role of type guards in TypeScript and provide an example of a custom type guard.
+
+Type guards play a very important role in TypeScript. It allows to check the type of variable at runtime. validate user input and ensure input type is correct using type guards. using type guards we can perform conditional logic based on variable type. type guards make our code more readable and maintainable.
+
+example of a custom type guard:  
+```
+const sumOfNumbers = (param: unknown): void => {
+  if (param instanceof Array) {
+    if (param.every((item) => typeof item === "number")) {
+      const total = param.reduce(
+        (accumulator, currentValue) => accumulator + currentValue,
+        0
+      );
+
+      console.log(total);
+    } else {
+      console.log("please provide an array of numbers");
+    }
+  } else {
+    console.log("please provide an array");
+  }
+};
+```
