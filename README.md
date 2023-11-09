@@ -113,3 +113,40 @@ const sumOfNumbers = (param: unknown): void => {
   }
 };
 ```
+
+## 6. Can you give an example of how to use "readonly" properties in TypeScript?
+
+We are using readonly property for creating an immutability variable. This type of variable we are using for immutable value and never changing value. we are make readonly variable for reduce accidentally changing value.  
+
+example:  
+```
+type Account = {
+    readonly accountNo: number;
+    name: string;
+}
+
+const account : Account = {
+    accountNo: 110055221,
+    name: "xyz"
+}
+
+account.accountNo = 35672782 // error
+```
+
+## 7. Explain what a union type is in TypeScript and provide an example of its usage.
+
+A union type in TypeScript is a type that allows to storage of two or more type values in a single variable. we are create union type with pipe(|). we use union type variable for creating reusable or flexible variables. we also use union type to validate user input.  
+
+example:
+```
+type User = {
+  name: string;
+  emailOrPhoneNo: string | number;
+};
+
+const user :User ={
+    name:"XYZ",
+    emailOrPhoneNo: "xyz@gmail.com"
+}
+
+```
